@@ -3,46 +3,71 @@
 	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
+	list-style: none;
 	font-family: 'Montserrat', sans-serif;
 }
 
 html {
 	scroll-behavior: smooth;
 }
-body {/* Cuerpo*/
+
+/* Cuerpo */
+body { 
 	background-image: linear-gradient(#636162, #b1afaf);
 	height: 122vh;
 	font-weight: bold;
 	letter-spacing: 2px;	
 }
 
-.main {
-	display: flex;
-	background-color: white;
-	padding: 10px;
-	width: 650px;
-	margin: 40px auto;
+/* Botón de contacto */
+button {
+    background: #d2c344;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+    color: #FFD4D4;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    width: 50%;
 }
 
-.main .left{
+/* Envoltorio del CV */
+.resume_wrapper { 
+	display: flex;
+	background-color:#d2c344;
+	padding: 10px;
+	width: 800px;
+	margin: 50px auto;
+}
+
+/* Envoltorio del CV y lado izquierdo*/
+.resume_wrapper .left { 
 	width: 35%;
 	background: #26252d;
-	color: #b1afaf;
 }
 
-.left {
-	background-color: #d2c344;
-	width: 25%;
-	height: 100%;
-	float: left;
-}
-
-.main .left .profile-img{
+.resume_wrapper .left .resume_image{
 	width: 100%;
+}
+
+/* imagen*/
+.resume_wrapper .left .resume_image img {
+	width: 50%;
 	display: block;
 }
 
-.main .resume_title{
+img {
+	width: 40%;
+	border-radius: 50%;
+}
+
+.box-1 {
+	position: relative;
+}
+
+.resume_wrapper .resume_title {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -50,50 +75,92 @@ body {/* Cuerpo*/
 	margin-bottom: 10px;
 	letter-spacing: 4px;
 }
-.profile-img {
-	height: 165px;
-	width: 180px;
-	border-radius: 80%;
-	margin-bottom: 80px;
-	margin-left: 100px;
-	filter: blur(50);
+
+.resume_wrapper .left .resume_info {
+	color: #84838b;
+}
+
+.resume_wrapper .left .resume_bottom {
+	padding: 20px 30px;
+}
+
+.resume_wrapper .resume_item {
+	padding: 20px 0;
+	border-bottom: 1px solid #0175b2;
+}
+
+.resume_wrapper .resume_item:last-child {
+	border-bottom: 0;
+}
+
+
+.resume_wrapper .right .resume_namerole .role{
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.resume_wrapper .right .resume_item .resume_title{
+	color: #26252d;
+}
+
+.resume_wrapper .right .resume_data{
+	display: flex;
+}
+
+.resume_wrapper .right .resume_data .year{
+	padding-right: 35px;
+	width: 115px;
+	position: relative;
+}
+
+.resume_wrapper .right .resume_data .content{
+	padding-left: 35px;
+	margin-bottom: 20px;
+	width: calc(100% - 115px);
+}
+
+.resume_wrapper .right .resume_data .year:before{
+	content: "";
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	border: 1px solid #26252d;
+	border-radius: 50%;
+}
+
+.resume_wrapper .right .resume_data .year:after{
+	content: "";
+    position: absolute;
+    top: 17px;
+    right: 4px;
+    width: 3px;
+    height: 90%;
+    background: #0175b2;
+}
+
+.resume_wrapper .right .resume_data:last-child .year:after{
+	display: none;
+}
+
+.resume_wrapper .right .resume_interests .resume_info{
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+
+.resume_wrapper .right .resume_interests .interests .int_icon{
+	font-size: 38px;
+	color: #0175b2;
+	margin-bottom: 10px;
 }
 
 img {
 	width:
 	50%;
 	border-radius: 50%;
-
-}
-
-.right {
-	width: 75%;
-	float: right;
-}
-
-.box-1 {
-	position: relative;
-}
-
-.heading {
-	background-color: #4d4d4d;
-	padding: 10px;
-	color: #d2c344;
-	text-align: left;
-	padding-left: 20px;
-	margin-right: -15px;
-}
-
-.heading::after {
-	content: '';
-	position: absolute;
-	width: 21px;
-	height: 18px;
-	background-color: #5a5959;
-	left: 191px;
-	top: 26px;
-	transform:rotate(56deg);
-	z-index: -1;
 }
 
 .p1 {
@@ -174,14 +241,7 @@ img {
 	margin-bottom: 10px;
 }
 
-.box-2 {
-	padding: 0px 50px;
-	margin-top: 30px;
-	position: relative;
-	align-items: center;
-}
-
-.p2 {
+.p {
 	font-size: 10px;
 	font-weight: 300;
 	letter-spacing: 1px;
@@ -259,7 +319,7 @@ h2 {
 		padding: 0;
 	}
 
-	.main .right .resmue_interests .interests .int_icon {
+	.main .right .resume_interests .interests .int_icon {
 		font-size: 24px;
 	}
 }
